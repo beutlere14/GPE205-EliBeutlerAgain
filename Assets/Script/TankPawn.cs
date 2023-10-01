@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class TankPawn : Pawn
 {
+    public GameObject shellPrefab;
+    public float fireForce;
+    public float damageDone;
+    public float shellLifespan;
+    protected TankShooter shooter;
+
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
+        shooter = GetComponent<TankShooter>();
 
     }
 
@@ -35,5 +42,10 @@ public class TankPawn : Pawn
     public override void RotateCounterClockwise()
     {
         Debug.Log("Rotate Counter-Clockwise");
+    }
+
+    public override void Shoot()
+    {
+        shooter.Shoot(shellPrefab, fireForce, damageDone, shellLifespan);
     }
 }
