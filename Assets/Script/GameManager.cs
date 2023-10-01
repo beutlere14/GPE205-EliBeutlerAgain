@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public static GameManager instance;
 
+    public List<PlayerController> players;
+
+
     //Prefabs
     public GameObject playerControllerPrefab;
     public GameObject tankPawnPrefab;
@@ -27,6 +30,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        players = new List<PlayerController>();
     }
 
 
