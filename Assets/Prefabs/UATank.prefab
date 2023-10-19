@@ -102,6 +102,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2648425893210671570}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4653217077833497057}
   m_SourcePrefab: {fileID: 100100000, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
 --- !u!4 &73118299455380775 stripped
 Transform:
@@ -144,7 +147,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -173,8 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77ea52999b4fb84b893d883858f60d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.05
-  turnSpeed: 0.025
+  moveSpeed: 2
+  turnSpeed: 0.05
   shellPrefab: {fileID: 5001647728849589415, guid: ae7882c1846079740b3817e0df948d95, type: 3}
   fireForce: 1000
   damageDone: 10
@@ -192,3 +195,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firepointTransform: {fileID: 9105360052168154352}
+--- !u!114 &4653217077833497057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740864232604436381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b556ba125a384ad4ba7cfa0a21af4501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

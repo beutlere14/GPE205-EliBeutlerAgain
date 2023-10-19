@@ -13,12 +13,13 @@ public abstract class Pawn : MonoBehaviour
     /// </summary>
     public float turnSpeed;
 
+    
 
 
     // Start is called before the first frame update
     public virtual void Start()
     {
-        
+     
     }
 
     // Update is called once per frame
@@ -31,6 +32,7 @@ public abstract class Pawn : MonoBehaviour
     public abstract void MoveBackward();
     public abstract void RotateClockwise();
     public abstract void RotateCounterClockwise();
+    public abstract void RotateTowards(Vector3 targetPosition);
     public abstract void Shoot();
 
 }
