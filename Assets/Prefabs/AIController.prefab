@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pawn: {fileID: 471634458845429556, guid: 2316982082b8df9419c925854b4d38dd, type: 3}
   currentState: 2
-  target: {fileID: 740864232604436381, guid: 830e1ab798865d84a90ce2dfa0aedf76, type: 3}
+  target: {fileID: 0}

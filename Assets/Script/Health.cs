@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
     private float currentHealth;
     public float maxHealth;
+
+    //Allows the explosion effect to be spawned
+    public Transform whatToSpawn;
+
+    //Delay so the player can see their own explosion before they die fully
+    public float deathDelay;
 
 
     // Start is called before the first frame update
@@ -34,6 +41,23 @@ public class Health : MonoBehaviour
     public void Die (Pawn source)
     {
         Debug.Log(source.name + " killed " + gameObject.name + ".");
+        //When a tank dies it spawns an explosion and set timer for it to go off
+        Explode();
+        //Destroy(gameObject);
+    }
+
+    void Explode()
+    {
+        //Spawns Explosion
+        Instantiate(whatToSpawn, transform.position, transform.rotation);
+        //Creates a delay equal to deathDelay varible
+        Invoke("TrueDead", deathDelay);
+    }
+
+    private void TrueDead()
+    {
+        //Destroys object after deathDelay has completed.
         Destroy(gameObject);
     }
+
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class AIController : Controller
+public class AISentryController : Controller
 {
     #region Varibles
     public enum AIState { Idle, Guard, Chase, Flee, Patrol, Attack, BacktoPost };
@@ -58,7 +58,7 @@ public class AIController : Controller
             //Seek(target);
             //Idle(target);
             CanHear(target);
-            CanSee(target);
+            //CanSee(target);
         }
     }
     
@@ -133,7 +133,8 @@ public class AIController : Controller
         if (Vector3.Distance(pawn.transform.position, target.transform.position) <= totalDistance)
         {
             // ... then we can hear the target
-            Seek(target);
+            pawn.Shoot();
+            Idle(target);
             return true;
         }
         else

@@ -6,6 +6,7 @@ public class DamageOnHit : MonoBehaviour
 {
     public float damageDone;
     public Pawn owner;
+    public Transform whatToSpawn;
 
     // Start is called before the first frame update
     public void OnTriggerEnter(Collider other)
@@ -20,6 +21,7 @@ public class DamageOnHit : MonoBehaviour
         }
 
         //Destroy the projectile when it hits anything, even if it didn't do damage
+        Instantiate(whatToSpawn, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }

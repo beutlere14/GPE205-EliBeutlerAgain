@@ -6,6 +6,9 @@ public class TankShooter : Shooter
 {
     public Transform firepointTransform;
 
+    public float fireRate;
+    float nextFire; 
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -20,6 +23,11 @@ public class TankShooter : Shooter
 
     public override void Shoot(GameObject shellPrefab, float fireForce, float damageDone, float lifespan)
     {
+        if (Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+        
+        #region Shooting
         // Instantiate the projectile
         GameObject newShell = Instantiate(shellPrefab, firepointTransform.position, firepointTransform.rotation);
 
@@ -51,5 +59,7 @@ public class TankShooter : Shooter
 
         //Destroy it after a set time.
         Destroy(newShell, lifespan);
+        #endregion
+        }
     }
 }

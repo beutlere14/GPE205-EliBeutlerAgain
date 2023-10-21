@@ -120,6 +120,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3898870451780418830}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6740183888488492020}
   m_SourcePrefab: {fileID: 100100000, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
 --- !u!4 &73118299455380775 stripped
 Transform:
@@ -192,10 +195,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  turnSpeed: 0.05
+  turnSpeed: 20
   shellPrefab: {fileID: 5001647728849589415, guid: ae7882c1846079740b3817e0df948d95, type: 3}
   fireForce: 1000
-  damageDone: 10
+  damageDone: 3
   shellLifespan: 2
 --- !u!114 &2648425893210671570
 MonoBehaviour:
@@ -210,6 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firepointTransform: {fileID: 9105360052168154352}
+  fireRate: 1
 --- !u!114 &4653217077833497057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,5 +239,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pawn: {fileID: 471634458845429556}
-  currentState: 0
+  currentState: 2
   target: {fileID: 0}
+  hearingDistance: 0
+  fieldOfView: 50
+--- !u!114 &-6740183888488492020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740864232604436381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa6e4d85460ae446b0e394fd6a926e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  whatToSpawn: {fileID: 1108104211790005591, guid: c229e2083ef34a740ab5e4fdb90631a4, type: 3}
+  deathDelay: 0
