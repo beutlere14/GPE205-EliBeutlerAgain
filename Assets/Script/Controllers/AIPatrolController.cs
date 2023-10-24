@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class AISentryController : Controller
+public class AIPatrolController : Controller
 {
     #region Varibles
     public enum AIState { Idle, Guard, Chase, Flee, Patrol, Attack, BacktoPost };
@@ -17,21 +17,23 @@ public class AISentryController : Controller
 
     public GameObject target;
 
+    public GameObject secondTarget;
+
     public float hearingDistance;
 
     public float fieldOfView;
     #endregion
     // Start is called before the first frame update
-    public void Start()
+    public override void Start()
     {
         //run the parents base
         base.Start();
 
-        TargetPlayerOne();
+        //TargetPlayerOne();
     }
 
     // Update is called once per frame
-    public void Update()
+    public override void Update()
     {
          MakeDecisions();
 
@@ -40,7 +42,7 @@ public class AISentryController : Controller
 
     }
 
-  
+
 
     /// <summary>
     /// Automatically make decisions about what to do based on current conditions
@@ -58,10 +60,10 @@ public class AISentryController : Controller
             //Seek(target);
             //Idle(target);
             CanHear(target);
-            //CanSee(target);
+            CanSee(target);
         }
     }
-    
+
     //This is the one that works
     public void TargetPlayerOne()
     {
@@ -124,7 +126,7 @@ public class AISentryController : Controller
         if (noiseMaker.volumeDistance <= 0)
         {
            
-            Idle(target);
+            Patrol(secondTarget);
             return false;
         }
         // If they are making noise, add the volumeDistance in the noisemaker to the hearingDistance of this AI
@@ -133,16 +135,15 @@ public class AISentryController : Controller
         if (Vector3.Distance(pawn.transform.position, target.transform.position) <= totalDistance)
         {
             // ... then we can hear the target
-            pawn.Shoot();
-            Idle(target);
+            Seek(target);
             return true;
         }
         else
         {
             // Otherwise, we are too far away to hear them
-            
+
             // Ideally this should change to some sort of patrol of moving randomly
-            Idle(target);
+            Patrol(secondTarget);
             return false;
         }
     }
@@ -236,5 +237,40 @@ public class AISentryController : Controller
     #endregion
 
 
+ 
 
+
+    #region PatrolState
+    public void DoPatrolState()
+    {
+        Patrol(secondTarget);
+    }
+
+    public void Patrol(Vector3 secondTargetPosition)
+    {
+        //Rotate towards Target
+        pawn.RotateTowards(secondTargetPosition);
+
+        // Debug.Log("Shuold be Rotating");
+
+        //Move towards target
+        pawn.MoveForward();
+    }
+
+    public void Patrol(GameObject secondTarget)
+    {
+        //rotate towrds target
+        Patrol(secondTarget.transform.position);
+    }
+
+    public void Patrol(Transform secondTargetTransform)
+    {
+        Patrol(secondTarget.transform.position);
+    }
+
+    public void Patrol(Pawn secondTargetPawn)
+    {
+        Patrol (secondTargetPawn.gameObject);
+    }
+    #endregion
 }

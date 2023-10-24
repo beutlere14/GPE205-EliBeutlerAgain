@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class AISentryController : Controller
+public class AISpeedster : Controller
 {
     #region Varibles
     public enum AIState { Idle, Guard, Chase, Flee, Patrol, Attack, BacktoPost };
@@ -22,16 +22,16 @@ public class AISentryController : Controller
     public float fieldOfView;
     #endregion
     // Start is called before the first frame update
-    public void Start()
+    public override void Start()
     {
         //run the parents base
         base.Start();
 
-        TargetPlayerOne();
+        //TargetPlayerOne();
     }
 
     // Update is called once per frame
-    public void Update()
+    public override void Update()
     {
          MakeDecisions();
 
@@ -55,9 +55,9 @@ public class AISentryController : Controller
         }
         else
         {
-            //Seek(target);
+            Seek(target);
             //Idle(target);
-            CanHear(target);
+            //CanHear(target);
             //CanSee(target);
         }
     }
@@ -133,8 +133,7 @@ public class AISentryController : Controller
         if (Vector3.Distance(pawn.transform.position, target.transform.position) <= totalDistance)
         {
             // ... then we can hear the target
-            pawn.Shoot();
-            Idle(target);
+            Seek(target);
             return true;
         }
         else
@@ -236,5 +235,9 @@ public class AISentryController : Controller
     #endregion
 
 
+    public void DoPatrolState()
+    {
+
+    }
 
 }

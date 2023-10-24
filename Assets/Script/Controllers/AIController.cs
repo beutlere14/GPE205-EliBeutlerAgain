@@ -164,7 +164,7 @@ public class AIController : Controller
         }
         else
         {
-            Debug.Log("Where are you?");
+            //Debug.Log("Where are you?");
             return false;
         }
     }

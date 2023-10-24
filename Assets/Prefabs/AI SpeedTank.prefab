@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 231829121386368202}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.007, y: 0.611, z: 1.682}
+  m_LocalPosition: {x: 0.007, y: 0.611, z: 1.227}
   m_LocalScale: {x: 0.14263, y: 0.14263, z: 0.14263}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
       propertyPath: m_Name
-      value: AI SentryTank
+      value: AI SpeedTank
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -122,7 +122,7 @@ PrefabInstance:
       addedObject: {fileID: -6740183888488492020}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -7545939254793400785}
+      addedObject: {fileID: -725601483260928732}
   m_SourcePrefab: {fileID: 100100000, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
 --- !u!4 &73118299455380775 stripped
 Transform:
@@ -180,7 +180,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &471634458845429556
 MonoBehaviour:
@@ -194,11 +194,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77ea52999b4fb84b893d883858f60d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  turnSpeed: 30
-  shellPrefab: {fileID: 5001647728849589415, guid: 7c7b855264a9c4541ab0082545d6ddab, type: 3}
+  moveSpeed: 50
+  turnSpeed: 360
+  shellPrefab: {fileID: 5001647728849589415, guid: ae7882c1846079740b3817e0df948d95, type: 3}
   fireForce: 1000
-  damageDone: 10
+  damageDone: 3
   shellLifespan: 2
 --- !u!114 &2648425893210671570
 MonoBehaviour:
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firepointTransform: {fileID: 9105360052168154352}
-  fireRate: 3
+  fireRate: 1
 --- !u!114 &4653217077833497057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
   maxHealth: 3
   whatToSpawn: {fileID: 1108104211790005591, guid: c229e2083ef34a740ab5e4fdb90631a4, type: 3}
   deathDelay: 0
---- !u!114 &-7545939254793400785
+--- !u!114 &-725601483260928732
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,15 +250,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 740864232604436381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bdf0083388978a42aa1cc5f0bcd23e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b782f10384953947a4b6e173f625f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pawn: {fileID: 471634458845429556}
-  currentState: 1
+  currentState: 2
   target: {fileID: 0}
   hearingDistance: 0
-  fieldOfView: 50
-  currentState: 1
-  target: {fileID: 0}
-  hearingDistance: 0
-  fieldOfView: 50
+  fieldOfView: 0
