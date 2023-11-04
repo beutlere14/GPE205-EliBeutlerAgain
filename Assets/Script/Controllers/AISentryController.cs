@@ -22,7 +22,7 @@ public class AISentryController : Controller
     public float fieldOfView;
     #endregion
     // Start is called before the first frame update
-    public void Start()
+    public override void Start()
     {
         //run the parents base
         base.Start();
@@ -31,7 +31,7 @@ public class AISentryController : Controller
     }
 
     // Update is called once per frame
-    public void Update()
+    public override void Update()
     {
          MakeDecisions();
 
