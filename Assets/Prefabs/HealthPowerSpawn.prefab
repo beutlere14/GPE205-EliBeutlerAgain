@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9004396660185009184}
   - component: {fileID: -3812434279516058073}
   m_Layer: 0
-  m_Name: PowerUpSpawner
+  m_Name: HealthPowerSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

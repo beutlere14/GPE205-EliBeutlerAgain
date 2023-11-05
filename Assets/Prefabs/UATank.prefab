@@ -233,6 +233,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UATank
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -270,6 +274,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7785969886375632446}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9199842196766998504}
   m_SourcePrefab: {fileID: 100100000, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
 --- !u!4 &73118299455380775 stripped
 Transform:
@@ -342,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  turnSpeed: 0.1
+  turnSpeed: 0.5
   shellPrefab: {fileID: 5001647728849589415, guid: ae7882c1846079740b3817e0df948d95, type: 3}
   fireForce: 1000
   damageDone: 3
@@ -401,6 +408,7 @@ MonoBehaviour:
   maxHealth: 100
   whatToSpawn: {fileID: 1108104211790005591, guid: 4b5937bc976a76144a7e585ed81514b8, type: 3}
   deathDelay: 1
+  cantLoseHealth: 0
 --- !u!114 &7785969886375632446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,3 +421,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab89038997144e4a9b1988cd27e930f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9199842196766998504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740864232604436381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be17d6440c3626545ad826c527199a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invincibleTimer: 10
+  PlayerRenderers:
+  - {fileID: 1245500830703003208}
+  invinMat: {fileID: 2100000, guid: d87f630f99427e0488780e1031539190, type: 2}
+  invinMatTwo: {fileID: 2100000, guid: d87f630f99427e0488780e1031539190, type: 2}
+  invinMatThree: {fileID: 2100000, guid: d87f630f99427e0488780e1031539190, type: 2}
+  tankFirst: {fileID: 2100000, guid: 01d74b5cddc05814bb8c90b33713fc14, type: 2}
+  tankSecond: {fileID: 2100000, guid: b724e5e87ece4084e93ab363bcb4b3d6, type: 2}
+  tankThird: {fileID: 2100000, guid: 962edcd4f15ec534fad680efb5eb410a, type: 2}
+  m_anim: {fileID: 0}
+--- !u!23 &1245500830703003208 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
+  m_PrefabInstance: {fileID: 471045941619800780}
+  m_PrefabAsset: {fileID: 0}

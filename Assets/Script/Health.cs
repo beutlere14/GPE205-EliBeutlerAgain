@@ -14,6 +14,12 @@ public class Health : MonoBehaviour
     //Delay so the player can see their own explosion before they die fully
     public float deathDelay;
 
+    //These varibles are for if you are invincible. The bool says if you are or not.
+    public bool cantLoseHealth;
+    //The Constant heatlh remembers what you were at when you began and keeps you there
+    private float constantHealth;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +27,20 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
     }
 
+    private void Update()
+    {
+        if (cantLoseHealth == true)
+        {
+            InvincibleLoop();
+        }
+    }
+
     /// <summary>
     /// Subtract incoming damage from current health.
     /// </summary>
     /// <param name="amount">The amount of damage that was received.</param>
     /// <param name="source">the Pawn that fired the projectile.</param>
-   public void TakeDamage(float amount, Pawn source)
+    public void TakeDamage(float amount, Pawn source)
     {
         currentHealth = currentHealth - amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
@@ -45,6 +59,31 @@ public class Health : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         Debug.Log(source.name + " healed " + amount + " points to " + gameObject.name + ".");
     }
+
+    public void Invincible()
+    {
+        
+        if (cantLoseHealth == true)
+        {
+            //Sets the constant health to whatever your current health is when you gain invincibility.
+            constantHealth = currentHealth;
+        }
+    }
+
+
+    public void InvincibleLoop()
+    {
+        
+        if (cantLoseHealth == true)
+        {
+            //Keeps your current health at the constant health you had checked when you first gained invincibility
+            currentHealth = constantHealth;
+
+            Debug.Log("Health is " + currentHealth);
+        }
+    }
+
+
 
     public void Die (Pawn source)
     {
