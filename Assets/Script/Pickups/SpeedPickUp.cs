@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthPickUp : Pickup
+public class SpeedPickup : Pickup
 {
-    public HealthPowerup powerup;
+    public SpeedPowerup powerup;
 
     //Allows the explosion effect to be spawned
     public Transform whatToSpawn;
@@ -20,10 +20,9 @@ public class HealthPickUp : Pickup
             // Add the powerup
             powerupManager.Add(powerup);
 
-            //in case what to spawn equals nothing, so it doesn't get stuck here.
+            // This is used for spawning explosion mainly. Wont spawn anything if nothing is selected
             if (whatToSpawn != null)
             {
-                //Spawns Explosion
                 Instantiate(whatToSpawn, transform.position, transform.rotation);
             }
 

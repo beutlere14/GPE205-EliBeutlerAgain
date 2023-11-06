@@ -20,8 +20,11 @@ public class InvinciblePickUp : Pickup
             // Add the powerup
             powerupManager.Add(powerup);
 
-            //Spawns Explosion
-            //Instantiate(whatToSpawn, transform.position, transform.rotation);
+            // This is used for spawning explosion mainly. Wont spawn anything if nothing is selected
+            if (whatToSpawn != null)
+            {
+                Instantiate(whatToSpawn, transform.position, transform.rotation);
+            }
 
             // Destroy this pickup
             Destroy(gameObject);
