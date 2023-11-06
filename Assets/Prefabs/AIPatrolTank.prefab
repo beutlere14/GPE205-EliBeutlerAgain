@@ -123,6 +123,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
       insertIndex: -1
       addedObject: {fileID: -5704061639514077383}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -134234395579464364}
   m_SourcePrefab: {fileID: 100100000, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
 --- !u!4 &73118299455380775 stripped
 Transform:
@@ -200,6 +203,7 @@ MonoBehaviour:
   fireForce: 2500
   damageDone: 6
   shellLifespan: 2
+  defaultSpeed: 0
 --- !u!114 &2648425893210671570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +245,7 @@ MonoBehaviour:
   maxHealth: 20
   whatToSpawn: {fileID: 1108104211790005591, guid: c229e2083ef34a740ab5e4fdb90631a4, type: 3}
   deathDelay: 0
+  cantLoseHealth: 0
 --- !u!114 &-5704061639514077383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,3 +264,15 @@ MonoBehaviour:
   secondTarget: {fileID: 0}
   hearingDistance: 10
   fieldOfView: 5
+--- !u!114 &-134234395579464364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740864232604436381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ab89038997144e4a9b1988cd27e930f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

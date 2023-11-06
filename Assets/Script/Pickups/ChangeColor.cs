@@ -43,7 +43,7 @@ public class ChangeColor : MonoBehaviour
 
             Invoke("NormalColor", invincibleTimer);
 
-            m_anim.SetTrigger("Die");
+          
            
        }
     }

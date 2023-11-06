@@ -27,7 +27,7 @@ public class MapGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GenerateMap();
     }
 
 
@@ -74,33 +74,38 @@ public class MapGenerator : MonoBehaviour
                 //Open the doors - if we're in the bottom row, open the north door
                 if (currentRow == 0)
                 {
-                    tempRoom.doorNorth.SetActive(false);
+                    Debug.LogWarning("North Deactivated");
                 }
                 else if (currentRow == rows - 1)
                 {
                     tempRoom.doorSouth.SetActive(false);
+                    Debug.LogWarning("South Deactivated");
                 }
                 else
                 {
                     // we are in a middle row so open both
                     tempRoom.doorNorth.SetActive(false);
                     tempRoom.doorSouth.SetActive(false);
+                    Debug.LogWarning("North and South Deactivated");
                 }
 
 
                 if (currentCol == 0)
                 {
                     tempRoom.doorEast.SetActive(false);
+                    Debug.LogWarning("East Deactivated");
                 }
                 else if (currentCol == cols - 1)
                 {
                     tempRoom.doorWest.SetActive(false);
+                    Debug.LogWarning("West Deactivated");
                 }
                 else
                 {
                     // we are in a middle row so open both
                     tempRoom.doorEast.SetActive(false);
                     tempRoom.doorWest.SetActive(false);
+                    Debug.LogWarning("East and West Deactivated");
                 }
 
                 #endregion Open and Close Doors

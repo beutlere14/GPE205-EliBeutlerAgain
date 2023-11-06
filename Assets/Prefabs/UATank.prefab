@@ -235,7 +235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e601bf2c5f60b9045bcd9b3452d34b9f, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -348,12 +348,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77ea52999b4fb84b893d883858f60d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 10
   turnSpeed: 0.5
   shellPrefab: {fileID: 5001647728849589415, guid: ae7882c1846079740b3817e0df948d95, type: 3}
   fireForce: 1000
   damageDone: 3
   shellLifespan: 2
+  defaultSpeed: 0
 --- !u!114 &2648425893210671570
 MonoBehaviour:
   m_ObjectHideFlags: 0

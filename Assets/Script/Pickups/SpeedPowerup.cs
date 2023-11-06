@@ -8,7 +8,7 @@ using UnityEngine;
 public class SpeedPowerup : Powerup
 {
     //This will remember the targets speed before and after the speed boost so it can reset it.
-    private float defaultSpeed;
+    private float baseSpeed;
     public float speedMultiplier = 3;
 
     public override void Apply(PowerupManager target)
@@ -22,9 +22,9 @@ public class SpeedPowerup : Powerup
         if (targetTankPawn != null)
         {
             //seting the default speed
-            defaultSpeed = targetTankPawn.moveSpeed;
+            baseSpeed = targetTankPawn.moveSpeed;
 
-            targetTankPawn.moveSpeed = defaultSpeed * speedMultiplier;
+            targetTankPawn.moveSpeed = baseSpeed + targetTankPawn.defaultSpeed + targetTankPawn.defaultSpeed + targetTankPawn.defaultSpeed;
         }
 
 
@@ -41,7 +41,7 @@ public class SpeedPowerup : Powerup
         if (targetTankPawn != null)
         {
             //seting the speed back to normal default speed
-            targetTankPawn.moveSpeed = defaultSpeed;
+            targetTankPawn.moveSpeed = targetTankPawn.moveSpeed - targetTankPawn.defaultSpeed - targetTankPawn.defaultSpeed - targetTankPawn.defaultSpeed;
         }
     }
 }

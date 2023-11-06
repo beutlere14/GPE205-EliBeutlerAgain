@@ -9,6 +9,8 @@ public class TankPawn : Pawn
     public float damageDone;
     public float shellLifespan;
     protected TankShooter shooter;
+
+    public float defaultSpeed;
     // Variable to hold our Mover
     protected Mover mover;
 
@@ -18,6 +20,9 @@ public class TankPawn : Pawn
         base.Start();
         shooter = GetComponent<TankShooter>();
         mover = GetComponent<TankMover>();
+
+        //This is to set this for easier use for speedPowerup
+        defaultSpeed = moveSpeed;
 
     }
 
