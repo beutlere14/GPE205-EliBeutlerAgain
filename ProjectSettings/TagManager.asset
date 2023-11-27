@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ColorChange
   - Wall
+  - NoHit
   layers:
   - Default
   - TransparentFX

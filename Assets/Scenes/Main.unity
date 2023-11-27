@@ -360,6 +360,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MapSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 3262920923926071175, guid: 5b8c6198e1101664b9f8e2c6229a73c5, type: 3}
+      propertyPath: gridPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 8074750430272501189, guid: 4f5bc82d8ceddcc4aa37e4c9aa38256a, type: 3}
+    - target: {fileID: 3262920923926071175, guid: 5b8c6198e1101664b9f8e2c6229a73c5, type: 3}
+      propertyPath: gridPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 8074750430272501189, guid: b9f05d307d753fb47840a8434eb4e879, type: 3}
+    - target: {fileID: 3262920923926071175, guid: 5b8c6198e1101664b9f8e2c6229a73c5, type: 3}
+      propertyPath: gridPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 8074750430272501189, guid: 0236c8c07134f4f43839e84c811283d8, type: 3}
     - target: {fileID: 8759237613273763883, guid: 5b8c6198e1101664b9f8e2c6229a73c5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -19,6 +19,9 @@ public class WestTrigger : MonoBehaviour
     //This is to store the current location of a room so it can spwan the next one properly
     public Transform referencePoint;
 
+    //To Make the wall bricks
+    public Material newMat;
+    public Renderer[] WallRenderer;
 
     // Start is called before the first frame update
 
@@ -35,6 +38,17 @@ public class WestTrigger : MonoBehaviour
 
 
     private void OnTriggerEnter(Collider other)
+    {
+      
+
+    
+    }
+
+   
+
+  
+
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -59,24 +73,14 @@ public class WestTrigger : MonoBehaviour
 
                 Instantiate(mapPrefab, spawnPosition, transform.rotation);
 
-               
+
                 triggerLimit = 1;
-                SelfDestruct();
+               // SelfDestruct();
+
+                GetComponent<Collider>().isTrigger = false;
+
+                GetComponent<Renderer>().material = newMat;
             }
-        }
-
-    
-    }
-
-   
-
-  
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Destroy(gameObject);
         }
     }
 

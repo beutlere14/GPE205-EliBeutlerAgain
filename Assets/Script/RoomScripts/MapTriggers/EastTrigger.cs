@@ -19,7 +19,9 @@ public class EastTrigger : MonoBehaviour
     //This is to store the current location of a room so it can spwan the next one properly
     public Transform referencePoint;
 
-
+    //To Make the wall bricks
+    public Material newMat;
+    public Renderer[] WallRenderer;
     // Start is called before the first frame update
 
     public void Awake()
@@ -38,6 +40,15 @@ public class EastTrigger : MonoBehaviour
     {
        
        
+       
+    }
+
+  
+
+  
+
+    private void OnTriggerExit(Collider other)
+    {
         if (other.CompareTag("Player"))
         {
             if (triggerLimit == 0)
@@ -63,22 +74,15 @@ public class EastTrigger : MonoBehaviour
 
                 Instantiate(mapPrefab, spawnPosition, transform.rotation);
 
-             
+
                 triggerLimit = 1;
-                SelfDestruct();
+                //SelfDestruct();
+
+                GetComponent<Collider>().isTrigger = false;
+                
+                GetComponent<Renderer>().material = newMat;
+               
             }
-        }
-    }
-
-  
-
-  
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-           SelfDestruct();
         }
     }
 
