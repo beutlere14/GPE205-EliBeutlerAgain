@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SouthTrigger : MonoBehaviour
 {
+    public bool indestructible;
+
 
     public GameObject[] gridPrefabs;
 
@@ -68,7 +70,7 @@ public class SouthTrigger : MonoBehaviour
 
 
                 float spawnPointX = referencePoint.position.x;
-                float spawnPointY = referencePoint.position.y;
+                float spawnPointY = referencePoint.position.y-50;
                 float spawnPointZ = referencePoint.position.z - northSouth;
 
                 Vector3 spawnPosition = new Vector3(spawnPointX, spawnPointY, spawnPointZ);

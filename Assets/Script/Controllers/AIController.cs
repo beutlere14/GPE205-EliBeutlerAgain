@@ -65,6 +65,7 @@ public class AIController : Controller
     //This is the one that works
     public void TargetPlayerOne()
     {
+     
         Debug.Log("Attempting to Target");
         // If the GameManager exists
         if (GameManager.instance != null)

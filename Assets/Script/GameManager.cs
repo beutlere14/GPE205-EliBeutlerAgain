@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,11 +14,18 @@ public class GameManager : MonoBehaviour
 
     public List<PlayerController> players;
 
+    public static bool inStartingArea;
+
 
     //Prefabs
     public GameObject playerControllerPrefab;
     public GameObject tankPawnPrefab;
     public Transform playerSpawnTransform;
+    public GameObject mapSpawner;
+
+    public float killScore = 0;
+    public float lives;
+
     #endregion Varibles
 
     private void Awake()
@@ -54,5 +63,45 @@ public class GameManager : MonoBehaviour
 
         // Hook them up
         newController.pawn = newPawn;   
+
+      
+        
     }
+
+    public void reload()
+    {
+        if (mapSpawner != null)
+        {
+     
+                Instantiate(mapSpawner, Vector3.zero, Quaternion.identity);
+      
+            
+           
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            inStartingArea = false;
+           
+
+
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        { 
+        inStartingArea = true;
+
+        }
+    }
+
+    public void destroyGameManager()
+    {
+        Destroy(gameObject);
+    }
+
 }

@@ -1,12 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Health : MonoBehaviour
 {
-    private float currentHealth;
+   public GameManager gameManager;
+   private Transform respawnPoint;
+    public float scoreBonus;
+    public string gameOverLevel = "LoadingScene";
+
+
+    public float currentHealth;
     public float maxHealth;
+
 
     //Allows the explosion effect to be spawned
     public Transform whatToSpawn;
@@ -25,6 +36,11 @@ public class Health : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+
+        if (gameManager != null)
+        {
+            respawnPoint = gameManager.playerSpawnTransform.transform;
+        }
     }
 
     private void Update()
@@ -44,7 +60,7 @@ public class Health : MonoBehaviour
     {
         currentHealth = currentHealth - amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        Debug.Log(source.name + " did " + amount + " damage to " + gameObject.name + ".");
+       // Debug.Log(source.name + " did " + amount + " damage to " + gameObject.name + ".");
 
         if (currentHealth <= 0)
         {
@@ -87,6 +103,8 @@ public class Health : MonoBehaviour
 
     public void Die (Pawn source)
     {
+       
+
         Debug.Log(source.name + " killed " + gameObject.name + ".");
         //When a tank dies it spawns an explosion and set timer for it to go off
         Explode();
@@ -95,6 +113,23 @@ public class Health : MonoBehaviour
 
     void Explode()
     {
+        addKillScore();
+
+
+        if (gameObject.tag == "Player")
+        {
+            if (respawnPoint != null)
+            {
+                if (gameManager != null)
+                {
+                    // to increment life down and load in new map
+                    Invoke("mapLifeReset", .1f);
+                  //  gameObject.transform.position = new Vector3(respawnPoint.position.x, respawnPoint.position.y, respawnPoint.position.z);
+
+                }
+            }
+        }
+
         //Spawns Explosion
         Instantiate(whatToSpawn, transform.position, transform.rotation);
         //Creates a delay equal to deathDelay varible
@@ -103,8 +138,70 @@ public class Health : MonoBehaviour
 
     private void TrueDead()
     {
-        //Destroys object after deathDelay has completed.
-        Destroy(gameObject);
+        if (gameObject.tag == "Player")
+        {
+           
+        }
+
+        else
+        {
+            //Destroys object after deathDelay has completed
+            Destroy(gameObject);
+        }
+
     }
+
+    public void addKillScore()
+    {
+        if (gameManager != null)
+        {
+            gameManager.killScore = gameManager.killScore + scoreBonus;
+            Debug.Log(gameManager.killScore);
+        }
+    }
+
+
+    public void mapLifeReset()
+    {
+        if (gameManager != null)
+        {
+
+            gameManager.lives--;
+
+            //0 lives is your last life
+
+            if (gameManager.lives > -1)
+            {
+
+
+
+                currentHealth = maxHealth;
+
+                //  gameManager.reload();
+
+
+                Invoke("positionChange", .1f);
+            }
+            else
+            {
+              //  gameManager.destroyGameManager();
+                SceneManager.LoadScene(gameOverLevel);
+            }
+        
+
+
+
+        }
+    }
+
+
+    public void positionChange()
+    {
+        gameObject.transform.position = new Vector3(respawnPoint.position.x, respawnPoint.position.y, respawnPoint.position.z);
+    }
+
+
+ 
+  
 
 }

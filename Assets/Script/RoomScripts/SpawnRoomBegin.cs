@@ -30,8 +30,12 @@ public class SpawnRoomBegin : MonoBehaviour
         }
 
     }
+    
 
 
-  
+public void Update()
+{
+        Destroy(gameObject);
 }
 
+}

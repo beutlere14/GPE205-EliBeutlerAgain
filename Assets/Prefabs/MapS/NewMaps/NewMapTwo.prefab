@@ -560,6 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3cce3051462afd47acd7cd142ec8baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indestructible: 1
 --- !u!1 &9013792757562929801
 GameObject:
   m_ObjectHideFlags: 0
@@ -3405,6 +3406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341d031c79611c0419a30ed60b42d28f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indestructible: 1
   gridPrefabs:
   - {fileID: 8074750430272501189, guid: 9a8a19385ec408b4b9dfc4cbe8418e33, type: 3}
   - {fileID: 8074750430272501189, guid: 60c56bfe9c3cbee499ea6d5341b46ad5, type: 3}
@@ -3432,6 +3434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba2701eba149af4780475a9b4b687ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indestructible: 1
   gridPrefabs:
   - {fileID: 8074750430272501189, guid: d9df5996e2d94cc41b975a1d09d4c927, type: 3}
   - {fileID: 8074750430272501189, guid: 24844398a3711074a9a6eb9f1700e66e, type: 3}
@@ -3459,6 +3462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1b2d14fe4ecea46a54ac49b9947526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indestructible: 1
   gridPrefabs:
   - {fileID: 8074750430272501189, guid: d077b2c6f924f284fb9fd7b6c342c3a4, type: 3}
   - {fileID: 8074750430272501189, guid: 50e47c74b1a9d0e4588528de03e954e4, type: 3}
@@ -3486,11 +3490,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48d6a3cc0d63cb41877d10baa9fba81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indestructible: 0
   gridPrefabs:
   - {fileID: 8074750430272501189, guid: 4946806b2b73b9048873468e06a43f9e, type: 3}
   - {fileID: 8074750430272501189, guid: ff080b2dab09a7b4d90d2e907e47dc4b, type: 3}
   - {fileID: 8074750430272501189, guid: d6eb7c7358073244a9ed3f80146b4834, type: 3}
-  spawnAtAwake: 0
+  spawnAtAwake: 1
   spawnDelay: 9
   referencePoint: {fileID: 8676854383530473674}
   newMat: {fileID: 2100000, guid: e5e059bef792d8b4ea00b4986a43d5a4, type: 2}

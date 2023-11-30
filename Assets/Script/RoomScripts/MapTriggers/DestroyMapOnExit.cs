@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DestroyMapOnExit : MonoBehaviour
 {
+    public bool indestructible;
+
+
     private float triggerLimit = 0;
 
     private void OnTriggerExit(Collider other)
@@ -28,6 +31,9 @@ public class DestroyMapOnExit : MonoBehaviour
 
     public void SelfDestruct()
     {
-        Destroy(gameObject);
+        if (indestructible == false)
+        {
+            Destroy(gameObject);
+        }
     }
 }

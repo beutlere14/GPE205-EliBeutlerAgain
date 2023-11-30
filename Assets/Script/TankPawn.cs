@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TankPawn : Pawn
 {
@@ -14,6 +15,7 @@ public class TankPawn : Pawn
     // Variable to hold our Mover
     protected Mover mover;
 
+    public GameManager gameManager;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -80,4 +82,5 @@ public class TankPawn : Pawn
     {
         shooter.Shoot(shellPrefab, fireForce, damageDone, shellLifespan);
     }
+
 }

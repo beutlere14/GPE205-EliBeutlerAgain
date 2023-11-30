@@ -242,6 +242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa6e4d85460ae446b0e394fd6a926e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 4807625124349707155, guid: fb0ab7929635c37489bcf6627f10e0d1, type: 3}
+  scoreBonus: 1400
+  currentHealth: 0
   maxHealth: 20
   whatToSpawn: {fileID: 1108104211790005591, guid: c229e2083ef34a740ab5e4fdb90631a4, type: 3}
   deathDelay: 0

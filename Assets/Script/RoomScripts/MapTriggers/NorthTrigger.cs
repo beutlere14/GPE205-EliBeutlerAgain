@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class NorthTrigger : MonoBehaviour
 {
+    public bool indestructible;
+
 
     public GameObject[] gridPrefabs;
 
@@ -73,14 +75,14 @@ public class NorthTrigger : MonoBehaviour
 
 
                 float spawnPointX = referencePoint.position.x;
-                float spawnPointY = referencePoint.position.y;
+                float spawnPointY = referencePoint.position.y - 50;
                 float spawnPointZ = referencePoint.position.z + northSouth;
-                Debug.LogWarning(spawnPointZ);
+               // Debug.LogWarning(spawnPointZ);
 
                 Vector3 spawnPosition = new Vector3(spawnPointX, spawnPointY, spawnPointZ);
 
                 Instantiate(mapPrefab, spawnPosition, transform.rotation);
-                Debug.LogWarning("RoomSpawned");
+             //   Debug.LogWarning("RoomSpawned");
 
 
                 triggerLimit = 1;
