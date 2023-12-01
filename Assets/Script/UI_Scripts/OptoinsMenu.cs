@@ -7,12 +7,10 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class SinglePlayer : MonoBehaviour
+public class OptionsMenu : MonoBehaviour
 {
-
-    public GameManager gameManager;
     //scene name we want to open
-    public string sceneName = "Main";
+    public string sceneName;
 
     //the button this is attached to
     public Button button1;
@@ -23,27 +21,19 @@ public class SinglePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    
       // adding the listender so it can be clicked
         button1.onClick.AddListener(taskonclick);
 
         // setting up communication with the text value to then get rid of the text
         b1text = gameObject.GetComponentInChildren<TMP_Text>(true);
         btnValue();
-
     }
 
     //To load the main level
     void taskonclick()
     {
-        if (gameManager != null)
-        {
-            gameManager.killScore = 0;
-            gameManager.lives = 3;
-            gameManager.multiplayer = false;
-            loadScene();
+       // SceneManager.LoadScene(sceneName);
 
-        }
     }
 
 
@@ -54,8 +44,11 @@ public class SinglePlayer : MonoBehaviour
     }
 
 
-   public void loadScene()
+    // Update is called once per frame
+    void Update()
     {
-        SceneManager.LoadScene(sceneName);
+ 
     }
+
+   
 }

@@ -381,7 +381,6 @@ Transform:
   m_Children:
   - {fileID: 4572116223376043877}
   - {fileID: 6825106680472864148}
-  - {fileID: 7535471448992220378}
   - {fileID: 8108050744789185249}
   - {fileID: 7295556851804382357}
   - {fileID: 7287750018753392777}
@@ -4475,68 +4474,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 9004396660185009184, guid: 5748c877bc31346439b767edc162d418, type: 3}
   m_PrefabInstance: {fileID: 7448997127789277457}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &7606751221660637693
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2324273962024457221}
-    m_Modifications:
-    - target: {fileID: 73118299455380775, guid: 86c26ba882cdfff489d1bcae55a1355a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 12.369779
-      objectReference: {fileID: 0}
-    - target: {fileID: 73118299455380775, guid: 86c26ba882cdfff489d1bcae55a1355a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.8141174
-      objectReference: {fileID: 0}
-    - target: {fileID: 73118299455380775, guid: 86c26ba882cdfff489d1bcae55a1355a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -19.396137
-      objectReference: {fileID: 0}
-    - target: {fileID: 73118299455380775, guid: 86c26ba882cdfff489d1bcae55a1355a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 73118299455380775, guid: 86c26ba882cdfff489d1bcae55a1355a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 73118299455380775, guid: 86c26ba882cdfff489d1bcae55a1355a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 73118299455380775, guid: 86c26ba882cdfff489d1bcae55a1355a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 73118299455380775, guid: 86c26ba882cdfff489d1bcae55a1355a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 73118299455380775, guid: 86c26ba882cdfff489d1bcae55a1355a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 73118299455380775, guid: 86c26ba882cdfff489d1bcae55a1355a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 740864232604436381, guid: 86c26ba882cdfff489d1bcae55a1355a, type: 3}
-      propertyPath: m_Name
-      value: AI SentryTank (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 86c26ba882cdfff489d1bcae55a1355a, type: 3}
---- !u!4 &7535471448992220378 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 73118299455380775, guid: 86c26ba882cdfff489d1bcae55a1355a, type: 3}
-  m_PrefabInstance: {fileID: 7606751221660637693}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7636822052313828599
 PrefabInstance:

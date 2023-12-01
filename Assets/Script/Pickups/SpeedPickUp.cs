@@ -9,6 +9,11 @@ public class SpeedPickup : Pickup
     //Allows the explosion effect to be spawned
     public Transform whatToSpawn;
 
+    //Points to add to score
+    public float bonusPoints = 50;
+    //to interact with game manager to add score
+    public GameManager gameManager;
+
     public override void OnTriggerEnter(Collider other)
     {
         // variable to store other object's PowerupController - if it has one
@@ -25,6 +30,16 @@ public class SpeedPickup : Pickup
             {
                 Instantiate(whatToSpawn, transform.position, transform.rotation);
             }
+
+            //Adding score only if player is the one to pick it up
+            if (other.CompareTag("Player"))
+            {
+                if (gameManager != null)
+                {
+                    gameManager.killScore = gameManager.killScore + bonusPoints;
+                }
+            }
+
 
             // Destroy this pickup
             Destroy(gameObject);

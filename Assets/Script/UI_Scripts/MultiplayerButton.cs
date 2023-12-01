@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class SinglePlayer : MonoBehaviour
+public class MultiPlayerButton : MonoBehaviour
 {
 
     public GameManager gameManager;
@@ -23,7 +23,7 @@ public class SinglePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    
+
       // adding the listender so it can be clicked
         button1.onClick.AddListener(taskonclick);
 
@@ -31,6 +31,7 @@ public class SinglePlayer : MonoBehaviour
         b1text = gameObject.GetComponentInChildren<TMP_Text>(true);
         btnValue();
 
+     
     }
 
     //To load the main level
@@ -39,10 +40,10 @@ public class SinglePlayer : MonoBehaviour
         if (gameManager != null)
         {
             gameManager.killScore = 0;
-            gameManager.lives = 3;
-            gameManager.multiplayer = false;
+            gameManager.lives = gameManager.lives * 2;
+            gameManager.multiplayer = true;
             loadScene();
-
+         
         }
     }
 
@@ -53,9 +54,9 @@ public class SinglePlayer : MonoBehaviour
         b1text.text = "";
     }
 
-
    public void loadScene()
     {
         SceneManager.LoadScene(sceneName);
     }
+
 }

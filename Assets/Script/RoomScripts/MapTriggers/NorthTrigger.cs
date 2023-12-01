@@ -42,15 +42,6 @@ public class NorthTrigger : MonoBehaviour
 
 
 
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-
-
- 
-    }
-
    
 
     private void OnTriggerExit(Collider other)
@@ -60,7 +51,7 @@ public class NorthTrigger : MonoBehaviour
         {
             if (triggerLimit == 0)
             {
-                Debug.LogWarning("NorthTriggered");
+               // Debug.LogWarning("NorthTriggered");
                 //If north or south it needs to change on the Z
                 // + 385.7 for North
                 // - 385.7 for South

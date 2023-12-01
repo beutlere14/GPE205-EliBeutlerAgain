@@ -86,6 +86,8 @@ MonoBehaviour:
     duration: 10
     isPermanent: 0
   whatToSpawn: {fileID: 0}
+  bonusPoints: 50
+  gameManager: {fileID: 4807625124349707155, guid: fb0ab7929635c37489bcf6627f10e0d1, type: 3}
 --- !u!114 &-424687612483370852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,9 +100,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be17d6440c3626545ad826c527199a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincibleTimer: 0
   PlayerRenderers:
   - {fileID: 0}
-  deathMat: {fileID: 2100000, guid: d87f630f99427e0488780e1031539190, type: 2}
+  invinMat: {fileID: 0}
+  invinMatTwo: {fileID: 0}
+  invinMatThree: {fileID: 0}
+  tankFirst: {fileID: 0}
+  tankSecond: {fileID: 0}
+  tankThird: {fileID: 0}
   m_anim: {fileID: 0}
 --- !u!1 &3059610467365196412
 GameObject:

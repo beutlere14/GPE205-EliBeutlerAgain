@@ -27,7 +27,8 @@ public class AIController : Controller
         //run the parents base
         base.Start();
 
-        TargetPlayerOne();
+        // TargetPlayerOne();
+        TargetNearestTank();
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class AIController : Controller
 
         // run the parents base
         base.Update();
+       
 
     }
 
@@ -51,7 +53,8 @@ public class AIController : Controller
         if (target == null)
         {
             Debug.Log("Retargeting");
-            TargetPlayerOne();
+            // TargetPlayerOne();
+            TargetNearestTank();
         }
         else
         {
@@ -59,6 +62,7 @@ public class AIController : Controller
             //Idle(target);
             CanHear(target);
             CanSee(target);
+            //TargetNearestTank();
         }
     }
     
@@ -98,19 +102,21 @@ public class AIController : Controller
         // Iterate through them one at a time
         foreach (Pawn tank in allTanks)
         {
-            // If this one is closer than the closest
-            if (Vector3.Distance(pawn.transform.position, tank.transform.position) <= closestTankDistance)
+            if (tank.CompareTag("Player"))
             {
-                // It is the closest
-                closestTank = tank;
-                closestTankDistance = Vector3.Distance(pawn.transform.position, closestTank.transform.position);
+                // If this one is closer than the closest
+                if (Vector3.Distance(pawn.transform.position, tank.transform.position) <= closestTankDistance)
+                {
+                    // It is the closest
+                    closestTank = tank;
+                    closestTankDistance = Vector3.Distance(pawn.transform.position, closestTank.transform.position);
+                }
             }
+
+            // Target the closest tank
+            target = closestTank.gameObject;
         }
-
-        // Target the closest tank
-        target = closestTank.gameObject;
     }
-
     //Needs some edits once we have more working states
     public bool CanHear(GameObject target)
     {

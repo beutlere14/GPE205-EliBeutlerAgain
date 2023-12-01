@@ -97,17 +97,20 @@ public class AISpeedster : Controller
         // Iterate through them one at a time
         foreach (Pawn tank in allTanks)
         {
-            // If this one is closer than the closest
-            if (Vector3.Distance(pawn.transform.position, tank.transform.position) <= closestTankDistance)
+            if (tank.CompareTag("Player"))
             {
-                // It is the closest
-                closestTank = tank;
-                closestTankDistance = Vector3.Distance(pawn.transform.position, closestTank.transform.position);
+                // If this one is closer than the closest
+                if (Vector3.Distance(pawn.transform.position, tank.transform.position) <= closestTankDistance)
+                {
+                    // It is the closest
+                    closestTank = tank;
+                    closestTankDistance = Vector3.Distance(pawn.transform.position, closestTank.transform.position);
+                }
             }
-        }
 
-        // Target the closest tank
-        target = closestTank.gameObject;
+            // Target the closest tank
+            target = closestTank.gameObject;
+        }
     }
 
     //Needs some edits once we have more working states

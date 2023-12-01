@@ -6,6 +6,11 @@ public class HealthPickUp : Pickup
 {
     public HealthPowerup powerup;
 
+    //Points to add to score
+    public float bonusPoints = 50;
+    //to interact with game manager to add score
+    public GameManager gameManager;
+
     //Allows the explosion effect to be spawned
     public Transform whatToSpawn;
 
@@ -25,6 +30,15 @@ public class HealthPickUp : Pickup
             {
                 //Spawns Explosion
                 Instantiate(whatToSpawn, transform.position, transform.rotation);
+            }
+
+            //Adding score only if player is the one to pick it up
+            if (other.CompareTag("Player"))
+            {
+                if (gameManager != null)
+                {
+                    gameManager.killScore = gameManager.killScore + bonusPoints;
+                }
             }
 
             // Destroy this pickup

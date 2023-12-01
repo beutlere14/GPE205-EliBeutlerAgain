@@ -157,6 +157,8 @@ MonoBehaviour:
     duration: 0
     isPermanent: 1
     healthToAdd: 10
+  bonusPoints: 50
+  gameManager: {fileID: 4807625124349707155, guid: fb0ab7929635c37489bcf6627f10e0d1, type: 3}
   whatToSpawn: {fileID: 1108104211790005591, guid: 0b3ed1acc87a1d24bb6940deb82ee428, type: 3}
 --- !u!65 &8392829647976163731
 BoxCollider:

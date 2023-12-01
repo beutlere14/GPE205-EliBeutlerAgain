@@ -26,6 +26,8 @@ public class TankPawn : Pawn
         //This is to set this for easier use for speedPowerup
         defaultSpeed = moveSpeed;
 
+     
+
     }
 
     // Update is called once per frame
@@ -57,7 +59,9 @@ public class TankPawn : Pawn
     public override void RotateClockwise()
     {
         // Debug.Log("Rotate Clockwise");
-        mover.Rotate(turnSpeed);
+
+       mover.Rotate(turnSpeed);
+       // transform.Rotate(0f, turnSpeed * Time.deltaTime, 0f, Space.Self);
     }
 
     public override void RotateCounterClockwise()
