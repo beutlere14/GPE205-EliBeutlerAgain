@@ -1,10 +1,11 @@
-using Palmmedia.ReportGenerator.Core.Reporting.Builders;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ChangeColor : MonoBehaviour
 {
+  
     public float invincibleTimer;
 
     public Renderer[] PlayerRenderers;
@@ -26,6 +27,8 @@ public class ChangeColor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    
+     
         newMat = new Material[] { invinMat, invinMatTwo, invinMatThree };
 
         oldMat = new Material[] { tankFirst , tankSecond , tankThird  };
@@ -33,7 +36,8 @@ public class ChangeColor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       if (other.CompareTag("ColorChange"))
+     
+        if (other.CompareTag("ColorChange"))
         {
             foreach (var renderer in PlayerRenderers)
             {
@@ -41,6 +45,7 @@ public class ChangeColor : MonoBehaviour
                 renderer.materials = newMat;
             }
 
+          
             Invoke("NormalColor", invincibleTimer);
 
           
@@ -56,6 +61,7 @@ public class ChangeColor : MonoBehaviour
             renderer.materials = oldMat;
 
         }
+      
     }
         
 }

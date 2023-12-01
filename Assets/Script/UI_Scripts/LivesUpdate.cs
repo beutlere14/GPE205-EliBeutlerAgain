@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.SceneManagement;
+
 using UnityEngine;
-using UnityEngine.UI;
+
 using TMPro;
-using UnityEngine.SceneManagement;
+
 using System;
 
 public class LivesUpdate : MonoBehaviour

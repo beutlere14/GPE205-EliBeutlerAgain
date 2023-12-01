@@ -85,7 +85,7 @@ MonoBehaviour:
   powerup:
     duration: 10
     isPermanent: 0
-  whatToSpawn: {fileID: 0}
+  whatToSpawn: {fileID: 8077178988001805889, guid: edea4aae54abd4243b3131c308aeb315, type: 3}
   bonusPoints: 50
   gameManager: {fileID: 4807625124349707155, guid: fb0ab7929635c37489bcf6627f10e0d1, type: 3}
 --- !u!114 &-424687612483370852

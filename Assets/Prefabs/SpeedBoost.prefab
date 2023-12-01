@@ -720,6 +720,6 @@ MonoBehaviour:
     duration: 2
     isPermanent: 0
     speedMultiplier: 5
-  whatToSpawn: {fileID: 0}
+  whatToSpawn: {fileID: 8077178988001805889, guid: 32c41980b142aab4f88aab14592a1d2c, type: 3}
   bonusPoints: 50
   gameManager: {fileID: 4807625124349707155, guid: fb0ab7929635c37489bcf6627f10e0d1, type: 3}

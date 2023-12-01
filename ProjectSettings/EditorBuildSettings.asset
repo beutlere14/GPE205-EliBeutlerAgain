@@ -14,9 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 8a784dbd74040eb4bab2398a6f0c1596
-  - enabled: 0
-    path: Assets/Scenes/Buffer.unity
-    guid: 86db2f82f6d70b148845341280f40c2d
   - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: b658e239f85c4e34d99a7451349fa616

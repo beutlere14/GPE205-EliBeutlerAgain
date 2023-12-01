@@ -8,6 +8,10 @@ public class DamageOnHit : MonoBehaviour
     public Pawn owner;
     public Transform whatToSpawn;
 
+    //Sounds
+    public AudioSource m_AudioSource;
+    public AudioClip spawnedSound;
+
     // Start is called before the first frame update
     public void OnTriggerEnter(Collider other)
     {
@@ -29,6 +33,12 @@ public class DamageOnHit : MonoBehaviour
 
             //Destroy the projectile when it hits anything, even if it didn't do damage
             Instantiate(whatToSpawn, transform.position, transform.rotation);
+
+            //Spawing sound if there is one to spawn
+            if (spawnedSound != null)
+            {
+                m_AudioSource.clip = spawnedSound;
+            }
             Destroy(gameObject);
         }
     }

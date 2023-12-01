@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InvinciblePickUp : Pickup
 {
+
+  //  public AudioSource m_AudioSource;
+
     public InvinciblePowerup powerup;
 
     //Allows the explosion effect to be spawned
@@ -13,6 +16,11 @@ public class InvinciblePickUp : Pickup
     public float bonusPoints = 50;
     //to interact with game manager to add score
     public GameManager gameManager;
+
+    public void Start()
+    {
+        
+    }
 
     public override void OnTriggerEnter(Collider other)
     {
