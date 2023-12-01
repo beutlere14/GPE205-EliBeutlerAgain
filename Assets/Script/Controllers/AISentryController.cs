@@ -52,8 +52,8 @@ public class AISentryController : Controller
         if (target == null)
         {
             Debug.Log("Retargeting");
-            // TargetPlayerOne();
-            TargetNearestTank();
+             TargetPlayerOne();
+          //  TargetNearestTank();
         }
         else
         {

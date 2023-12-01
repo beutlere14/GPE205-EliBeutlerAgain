@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players: []
-  multiplayer: 0
+  multiplayer: 1
   playerControllerPrefab: {fileID: 5387188500609668520, guid: 6235be4df02d3074d8722470ab149a9b, type: 3}
   playerTwoControllerPrefab: {fileID: 5387188500609668520, guid: b1783bb582bed8d4bbb814608f01d452, type: 3}
   tankPawnPrefab: {fileID: 740864232604436381, guid: 830e1ab798865d84a90ce2dfa0aedf76, type: 3}

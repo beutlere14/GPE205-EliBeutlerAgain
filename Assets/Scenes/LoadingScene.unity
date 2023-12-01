@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 454615989}
   - component: {fileID: 454615988}
   - component: {fileID: 454615987}
-  - component: {fileID: 454615986}
+  - component: {fileID: 454615991}
   m_Layer: 5
   m_Name: PlayAgainButton
   m_TagString: Untagged
@@ -412,22 +412,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &454615986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454615985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3118c457f57df404aa0702de2331b725, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 4807625124349707155, guid: fb0ab7929635c37489bcf6627f10e0d1, type: 3}
-  sceneName: MainMenu
-  button1: {fileID: 454615987}
-  b1text: {fileID: 0}
 --- !u!114 &454615987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,6 +514,21 @@ RectTransform:
   m_AnchoredPosition: {x: -19.27, y: 149.4}
   m_SizeDelta: {x: 150.1, y: 31.79}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &454615991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454615985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716b39aa170f00c4c93531aebd62049a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: MainMenu
+  button1: {fileID: 454615987}
+  b1text: {fileID: 0}
 --- !u!1 &753396686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,7 +1335,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1569741697}
   - component: {fileID: 1569741696}
-  - component: {fileID: 1569741695}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1344,14 +1342,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1569741695
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1569741694}
-  m_Enabled: 1
 --- !u!20 &1569741696
 Camera:
   m_ObjectHideFlags: 0

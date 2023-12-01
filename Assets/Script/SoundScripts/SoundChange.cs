@@ -23,16 +23,33 @@ public class SoundChange : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Main" || SceneManager.GetActiveScene().name == "MuliplayerTest")
         {
-            m_AudioSource.clip = main_Clip;
+            // if not already playing main clip
+            if (m_AudioSource.clip != main_Clip)
+            {
+                m_AudioSource.clip = main_Clip;
+                m_AudioSource.Play();
+            }
         }
 
         if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "Options")
         {
-            m_AudioSource.clip = mainMenu_Clip;
+            // if not already plaing mainMenu Clip
+            if (m_AudioSource.clip != mainMenu_Clip)
+            {
+                 m_AudioSource.clip = mainMenu_Clip;
+                 m_AudioSource.Play();
+            }
+           
         }
         if(SceneManager.GetActiveScene().name == "LoadingScene")
         {
-            m_AudioSource.clip = gameOver_Clip;
+            // if not already playing gameOver Clip
+            if (m_AudioSource.clip != gameOver_Clip)
+            {
+                  m_AudioSource.clip = gameOver_Clip;
+                 m_AudioSource.Play();
+            }
+          
         }
     }
 }

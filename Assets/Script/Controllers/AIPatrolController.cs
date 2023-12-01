@@ -53,8 +53,8 @@ public class AIPatrolController : Controller
         if (target == null)
         {
             Debug.Log("Retargeting");
-            // TargetPlayerOne();
-            TargetNearestTank();
+            TargetPlayerOne();
+           // TargetNearestTank();
         }
         else
         {

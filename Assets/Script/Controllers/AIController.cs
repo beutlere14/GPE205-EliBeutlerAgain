@@ -27,8 +27,8 @@ public class AIController : Controller
         //run the parents base
         base.Start();
 
-        // TargetPlayerOne();
-        TargetNearestTank();
+        TargetPlayerOne();
+       // TargetNearestTank();
     }
 
     // Update is called once per frame

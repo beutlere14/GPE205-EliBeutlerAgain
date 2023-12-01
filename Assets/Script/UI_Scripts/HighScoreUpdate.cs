@@ -32,7 +32,10 @@ public class HighScoreUpdate : MonoBehaviour
     //BaseValue
     public void btnValue()
     {
-        b1text.text = "0";
+        if (gameManager != null)
+        {
+            b1text.text = Convert.ToString(gameManager.highScore);
+        }
     }
 
 
