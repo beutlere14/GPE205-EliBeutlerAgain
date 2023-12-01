@@ -23,8 +23,13 @@ public class MultiPlayerButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+      //  gameManager.multiplayer = true;
 
-      // adding the listender so it can be clicked
+        gameManager.killScore = 0;
+      //  gameManager.lives = gameManager.lives * 2;
+     //   gameManager.multiplayer = true;
+
+        // adding the listender so it can be clicked
         button1.onClick.AddListener(taskonclick);
 
         // setting up communication with the text value to then get rid of the text
@@ -37,14 +42,14 @@ public class MultiPlayerButton : MonoBehaviour
     //To load the main level
     void taskonclick()
     {
-        if (gameManager != null)
-        {
+        //if (gameManager != null)
+      //  {
             gameManager.killScore = 0;
-            gameManager.lives = gameManager.lives * 2;
+        gameManager.lives = 6;
             gameManager.multiplayer = true;
-            loadScene();
+           // loadScene();
          
-        }
+       // }
     }
 
 
